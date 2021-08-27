@@ -8,9 +8,15 @@ const camera = new THREE.PerspectiveCamera(
   1000
 )
 
-const renderer = new THREE.WebGLRenderer()
+const renderer = new THREE.WebGLRenderer(
+  {
+    antialias: true
+  }
+)
+
 
 renderer.setSize(innerWidth, innerHeight)
+renderer.setPixelRatio(window.devicePixelRatio)
 document.body.appendChild(renderer.domElement)
 
 const sphere = new THREE.Mesh(
@@ -22,7 +28,7 @@ const sphere = new THREE.Mesh(
 
 scene.add(sphere)
 
-camera.position.z = 10
+camera.position.z = 15 
 
 function animate(){
   requestAnimationFrame(animate)
