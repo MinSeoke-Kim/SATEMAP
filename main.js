@@ -1,4 +1,5 @@
 import * as THREE from 'https://unpkg.com/three@0.126.1/build/three.module.js'
+import vertexShader from './shader/vertex.glsl'
 
 const scene = new THREE.Scene()
 const camera = new THREE.PerspectiveCamera(
@@ -21,8 +22,8 @@ document.body.appendChild(renderer.domElement)
 
 const sphere = new THREE.Mesh(
   new THREE.SphereGeometry(5, 50, 50),
-  new THREE.MeshBasicMaterial({
-    map: new THREE.TextureLoader().load('./img/globe.jpg')
+  new THREE.ShaderMaterial({
+    //
   })
 )
 
