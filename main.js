@@ -85,7 +85,7 @@ scene.add(stars);
 //--
 let SLC40 = new THREE.Mesh(
   new THREE.OctahedronGeometry(0.04),
-  new THREE.MeshBasicMaterial({color:0x00ff00})
+  new THREE.MeshBasicMaterial({color:0xff0000})
 );
 
 let SLC40lat = (28.7617) * Math.PI / 180;
@@ -99,7 +99,7 @@ scene.add(SLC40)
 
 let SLC4E = new THREE.Mesh(
   new THREE.OctahedronGeometry(0.04),
-  new THREE.MeshBasicMaterial({color:0x00ff00})
+  new THREE.MeshBasicMaterial({color:0xff0000})
 );
 
 let SLC4Elat = (43.8522) * Math.PI / 180;
@@ -113,7 +113,7 @@ scene.add(SLC4E)
 
 let LC39A = new THREE.Mesh(
   new THREE.OctahedronGeometry(0.04),
-  new THREE.MeshBasicMaterial({color:0x00ff00})
+  new THREE.MeshBasicMaterial({color:0xff0000})
 );
 
 let LC39Alat = (29.7617) * Math.PI / 180;
@@ -127,7 +127,7 @@ scene.add(LC39A)
 
 let BOCA = new THREE.Mesh(
   new THREE.OctahedronGeometry(0.04),
-  new THREE.MeshBasicMaterial({color:0x00ff00})
+  new THREE.MeshBasicMaterial({color:0xff0000})
 );
 
 let BOCAlat = (27.2017) * Math.PI / 180;
@@ -139,7 +139,38 @@ let BOCAz = Math.cos(BOCAlat) * 5.04;
 BOCA.position.set(BOCAx, BOCAy, BOCAz);
 scene.add(BOCA);
 
+//scheduled launch locations
+let scheduledLaunchSep = [SLC4E, LC39A, BOCA];
+let scheduledLaunchOct = [SLC40, LC39A];
+let scheduledLaunchNov = [LC39A, SLC4E];
+let scheduledLaunchDec = [LC39A];
 
+ var today = new Date();
+ var month = today.getMonth() + 1;
+
+if (month == 9) {
+  for (let i = 0; i < scheduledLaunchSep.length; i++){
+    scheduledLaunchSep[i].material.color = {r: 0, g: 1, b: 0};
+  }
+};
+
+if (month == 10) {
+  for (let i = 0; i < scheduledLaunchOct.length; i++){
+    scheduledLaunchOct[i].material.color = {r: 0, g: 1, b: 0};
+  }
+};
+
+if (month == 11) {
+  for (let i = 0; i < scheduledLaunchNov.length; i++){
+    scheduledLaunchNov[i].material.color = {r: 0, g: 1, b: 0};
+  }
+};
+
+if (month == 12) {
+  for (let i = 0; i < scheduledLaunchDec.length; i++){
+    scheduledLaunchDec[i].material.color = {r: 0, g: 1, b: 0};
+  }
+};
 
 //--Animation 
 function animate() {
