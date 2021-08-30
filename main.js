@@ -23,7 +23,7 @@ const camera = new THREE.PerspectiveCamera(
   1,
   10000
 );
-camera.position.set(0, 0, 15);
+camera.position.set(0, 0, 10);
 
 const controls = new OrbitControls( camera, renderer.domElement );
 controls.update();
@@ -82,47 +82,62 @@ const stars = new THREE.Points(starGeometry, starMaterial);
 scene.add(stars);
 
 //--
-let mesh = new THREE.Mesh(
-  new THREE.SphereGeometry(0.05, 20, 20),
-  new THREE.MeshBasicMaterial({color:0x00ff00})
+let SLC40 = new THREE.Mesh(
+  new THREE.SphereGeometry(0.04, 30, 30),
+  new THREE.MeshBasicMaterial({color:0xff004D})
 );
 
-let lat = (25.7617) * Math.PI / 180;
-let lng = (80.1918) * Math.PI / 180;
+let SLC40lat = (28.7617) * Math.PI / 180;
+let SLC40lng = (72.3918) * Math.PI / 180;
 
-let x1 = Math.cos(lng) * Math.sin(lat) * 5;
-let y1 = Math.sin(lng) * Math.sin(lat) * 5; 
-let z1 = Math.cos(lat) * 5;
-mesh.position.set(x1, y1, z1);
-scene.add(mesh)
+let SLC40x = Math.cos(SLC40lng) * Math.sin(SLC40lat) * 5;
+let SLC40y = Math.sin(SLC40lng) * Math.sin(SLC40lat) * 5; 
+let SLC40z = Math.cos(SLC40lat) * 5;
+SLC40.position.set(SLC40x, SLC40y, SLC40z);
+scene.add(SLC40)
 
-let mesh2 = new THREE.Mesh(
-  new THREE.SphereGeometry(0.05, 20, 20),
-  new THREE.MeshBasicMaterial({color:0xff0000})
+let SLC4E = new THREE.Mesh(
+  new THREE.SphereGeometry(0.04, 30, 30),
+  new THREE.MeshBasicMaterial({color:0xff004D})
 );
 
-let lat2 = (40.7128) * Math.PI / 180;
-let lng2 = (74.0060) * Math.PI / 180;
+let SLC4Elat = (43.8522) * Math.PI / 180;
+let SLC4Elng = (125.6437) * Math.PI / 180;
 
-let x2 = Math.cos(lng2) * Math.sin(lat2) * 5;
-let y2 = Math.sin(lng2) * Math.sin(lat2) * 5; 
-let z2 = Math.cos(lat2) * 5;
-mesh2.position.set(x2, y2, z2);
-scene.add(mesh2)
+let SLC4Ex = Math.cos(SLC4Elng) * Math.sin(SLC4Elat) * 5;
+let SLC4Ey = Math.sin(SLC4Elng) * Math.sin(SLC4Elat) * 5; 
+let SLC4Ez = Math.cos(SLC4Elat) * 5;
+SLC4E.position.set(SLC4Ex, SLC4Ey, SLC4Ez);
+scene.add(SLC4E)
 
-let mesh3 = new THREE.Mesh(
-  new THREE.SphereGeometry(0.05, 20, 20),
-  new THREE.MeshBasicMaterial({color:0xffff00})
+let LC39A = new THREE.Mesh(
+  new THREE.SphereGeometry(0.04, 30, 30),
+  new THREE.MeshBasicMaterial({color:0xff004D})
 );
 
-let lat3 = (34.0522) * Math.PI / 180;
-let lng3 = (118.2437) * Math.PI / 180;
+let LC39Alat = (29.7617) * Math.PI / 180;
+let LC39Alng = (73.3918) * Math.PI / 180;
 
-let x3 = Math.cos(lng3) * Math.sin(lat3) * 5;
-let y3 = Math.sin(lng3) * Math.sin(lat3) * 5; 
-let z3 = Math.cos(lat3) * 5;
-mesh3.position.set(x3, y3, z3);
-scene.add(mesh3)
+let LC39Ax = Math.cos(LC39Alng) * Math.sin(LC39Alat) * 5;
+let LC39Ay = Math.sin(LC39Alng) * Math.sin(LC39Alat) * 5; 
+let LC39Az = Math.cos(LC39Alat) * 5;
+LC39A.position.set(LC39Ax, LC39Ay, LC39Az);
+scene.add(LC39A)
+
+let BOCA = new THREE.Mesh(
+  new THREE.SphereGeometry(0.04, 30, 30),
+  new THREE.MeshBasicMaterial({color:0xff004D})
+);
+
+let BOCAlat = (27.2017) * Math.PI / 180;
+let BOCAlng = (105.0918) * Math.PI / 180;
+
+let BOCAx = Math.cos(BOCAlng) * Math.sin(BOCAlat) * 5;
+let BOCAy = Math.sin(BOCAlng) * Math.sin(BOCAlat) * 5; 
+let BOCAz = Math.cos(BOCAlat) * 5;
+BOCA.position.set(BOCAx, BOCAy, BOCAz);
+scene.add(BOCA)
+
 
 //--Animation 
 function animate() {
